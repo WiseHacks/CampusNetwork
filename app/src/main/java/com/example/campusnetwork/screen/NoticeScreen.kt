@@ -111,9 +111,7 @@ fun NoticeScreen(context: Context, navController: NavController) {
                                 .wrapContentHeight()
                                 .padding(15.dp)
                                 .clickable {
-                                    val json =
-                                        Uri.encode(Gson().toJson(item.toObject(Blog::class.java)))
-                                    navController.navigate("${Screen.DetailedBlogScreen.route}/$json")
+
                                 },
                             shape = RoundedCornerShape(corner = CornerSize(20.dp)),
 
@@ -211,8 +209,8 @@ fun NoticeScreen(context: Context, navController: NavController) {
                                                             .document(uid).set(data)
 
                                                         val db = FirebaseFirestore.getInstance()
-                                                        db.collection("Blogs").document(notice.id).update("likes", likes)
-                                                        db.collection("Blogs").document(notice.id)
+                                                        db.collection("Notices").document(notice.id).update("likes", likes)
+                                                        db.collection("Notices").document(notice.id)
                                                             .update("dislikes", dislikes)
                                                     }, enabled = like) {
                                                         Text("Like")
@@ -243,8 +241,8 @@ fun NoticeScreen(context: Context, navController: NavController) {
                                                             .document(uid).set(data)
 
                                                         val db = FirebaseFirestore.getInstance()
-                                                        db.collection("Blogs").document(notice.id).update("likes", likes)
-                                                        db.collection("Blogs").document(notice.id)
+                                                        db.collection("Notices").document(notice.id).update("likes", likes)
+                                                        db.collection("Notices").document(notice.id)
                                                             .update("dislikes", dislikes)
                                                     }, enabled = dislike) {
                                                         Text("Dislike")
