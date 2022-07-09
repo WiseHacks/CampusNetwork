@@ -44,6 +44,7 @@ fun NoticeScreen(context: Context, navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(15.dp),
+
                     shape = RoundedCornerShape(corner = CornerSize(20.dp)),
                     backgroundColor = Color(0.945f, 0.969f, 0.973f, 1.0f)
                 ) {
