@@ -103,7 +103,7 @@ fun HeaderCardHomeScreen(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    "Write a $type...",
+                    "Write a post...",
                     color = Color.Blue,
                     fontSize = 25.sp,
                     modifier = Modifier.padding(10.dp)
