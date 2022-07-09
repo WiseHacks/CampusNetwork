@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CampusNetwork</string>
+    <string name="title_activity_user_dash_board">UserDashBoard</string>
+    <string name="title_activity_test">test</string>
+</resources>
