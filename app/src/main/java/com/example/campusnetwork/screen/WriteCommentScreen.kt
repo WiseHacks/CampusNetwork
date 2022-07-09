@@ -37,7 +37,9 @@ fun WriteCommentScreen(
     ie_exp: IEexp = IEexp()
 ) {
     Box(
-        modifier = Modifier.fillMaxSize().padding(15.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(15.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(modifier = Modifier.fillMaxWidth()) {
@@ -145,7 +147,8 @@ fun PostComment(
                                     if (it_.isSuccessful) {
                                         Toast.makeText(context, "Posted", Toast.LENGTH_SHORT)
                                             .show()
-                                        navController.popBackStack()
+                                        navController.popBackStack() // pop comment screen
+                                        navController.popBackStack() // pop before that one
                                         val json =
                                             Uri.encode(Gson().toJson(blog))
                                         navController.navigate("${Screen.DetailedBlogScreen.route}/$json")
@@ -166,10 +169,11 @@ fun PostComment(
                                 .addOnCompleteListener { it_ ->
                                     if (it_.isSuccessful) {
                                         Toast.makeText(context, "Posted", Toast.LENGTH_SHORT).show()
-                                    navController.popBackStack()
-                                    val json =
-                                        Uri.encode(Gson().toJson(ie_exp))
-                                    navController.navigate("${Screen.DetailedExpScreen.route}/$json")
+                                        navController.popBackStack()
+                                        navController.popBackStack()
+                                        val json =
+                                            Uri.encode(Gson().toJson(ie_exp))
+                                        navController.navigate("${Screen.DetailedExpScreen.route}/$json")
                                     }
                                 }
 
